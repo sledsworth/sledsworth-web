@@ -1,0 +1,17 @@
+extends ./layout.pug
+
+block title
+  title archive | empatheticbot
+block content
+  .content-container
+    .article-heading
+      h1 Previously...
+    .archive
+      if archives
+        each months, year in archives
+          .year-row
+            h2
+              a(href=`/${year}`) #{year}
+            each days, month in months
+              .month-column
+                a(href=`/${year}/${month}`) #{toMonth[Number(month)]}

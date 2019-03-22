@@ -1,0 +1,30 @@
+extends ./layout.pug
+
+block title
+  title #{post.textTitle} | empatheticbot
+
+block richPreviews
+  meta(property='og:title', content=post.metadata.title)
+  meta(property='og:url', content=`https://empatheticbot.com/${post.metadata.link}`)
+  meta(property='og:image', content=`http://empatheticbot.com/images/${post.metadata.image}`)
+  meta(property='og:image:secure_url', content=`https://empatheticbot.com/images/${post.metadata.image}`)
+  meta(property='og:image:type', content='image/png')
+  meta(property='og:image:width', content='1200')
+  meta(property='og:image:height', content='1200')
+
+block content
+  .content-container
+    if pageHeading
+      h1 #{pageHeading}
+    if post
+      include ./includes/post
+  .post-footer
+    hr.post-hr
+    if previous
+      .post-previous
+        label.post-date Previous
+        != previous.linkTitle
+    if next
+      .post-next(style=previous ? 'width: 50%;' : 'width: 100%;')
+        label.post-date Next
+        != next.linkTitle

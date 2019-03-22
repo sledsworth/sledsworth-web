@@ -1,0 +1,47 @@
+{
+  "name": "empatheticbot",
+  "version": "1.0.0",
+  "description": "Node and Pug lightweight blog with Dropbox",
+  "author": "Steve Ledsworth",
+  "private": true,
+  "main": "src/app.js",
+  "eslintConfig": {
+    "env": {
+      "node": true
+    }
+  },
+  "scripts": {
+    "develop": "heroku local",
+    "start": "heroku local"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "commonmark": "^0.27.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.8",
+    "dropbox": "^3.0.4",
+    "express": "^4.16.2",
+    "fuse.js": "^3.2.0",
+    "highlightjs": "^9.10.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
+    "markdown-it": "^8.4.0",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-highlightjs": "^3.0.0",
+    "markdown-it-video": "^0.6.3",
+    "morgan": "~1.6.1",
+    "node-sass": "^4.5.3",
+    "pug": "^2.0.0-rc.2",
+    "q": "^1.5.0",
+    "q-io": "^1.13.4",
+    "serve-favicon": "^2.4.3",
+    "utf8": "^3.0.0"
+  },
+  "repository": {},
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "eslintIntegration": true
+  }
+}

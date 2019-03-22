@@ -1,0 +1,19 @@
+extends ./layout.pug
+
+block title
+  title #{tabTitle} | empatheticbot
+
+block richPreviews
+  meta(property='og:title', content=metadata.title)
+  meta(property='og:url', content=`https://empatheticbot.com/${metadata.link}`)
+  meta(property='og:image', content=`http://empatheticbot.com/images/${metadata.image}`)
+  meta(property='og:image:secure_url', content=`https://empatheticbot.com/images/${metadata.image}`)
+  meta(property='og:image:type', content='image/png')
+  meta(property='og:image:width', content='1200')
+  meta(property='og:image:height', content='1200')
+
+block content
+  .content-container
+    .article-heading!= header
+    .post-body!= body
+

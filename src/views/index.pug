@@ -1,0 +1,11 @@
+extends ./layout
+
+block title
+  title empatheticbot
+block content
+  .content-container
+    if pageHeading
+      h1 #{pageHeading}
+    if posts 
+      each post in posts
+        include ./includes/post

@@ -1,0 +1,10 @@
+- var pages = ['about', 'projects', 'archive' ]
+
+header
+    a(href="/")
+        include ../../public/images/logo.svg
+    nav
+        ul
+            each path in pages
+                li
+                    a(href="/" + path, class=path === route && 'active') #{path}

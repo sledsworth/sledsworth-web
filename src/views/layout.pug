@@ -1,0 +1,35 @@
+doctype
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(property='og:site_url', content='empatheticbot.com')
+		meta(property='og:site_name', content='Empatheticbot')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		block richPreviews
+			meta(property='og:description', content='An Exceptionally Nice Website called Empatheticbot by Steve Ledsworth')
+			meta(property='og:title', content='A Pretty Nice Website by Steve Ledsworth')
+		link(rel='shortcut icon' type='image/x-icon', href='/images/logo.ico')
+		link(rel='apple-touch-icon' sizes='192x192', href='/images/icon.png')
+		link(rel='stylesheet', href='/stylesheets/atom-light.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(href='https://fonts.googleapis.com/css?family=Anonymous+Pro|Merriweather+Sans:800|Merriweather:400,400i,700' rel='stylesheet')
+		block title
+			title empatheticbot
+
+	body
+		.main-container
+			include ./includes/header.pug
+			block content
+			.floating-buttons
+				button.scroll-to-top
+			if route !== 'search' 
+				include ./includes/search-bar.pug
+			include ./includes/footer.pug
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	//- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127734907-1"></script>
+	//- script
+	//- 	include ../googleAnalytics.js
+
+
+

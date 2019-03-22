@@ -1,0 +1,10 @@
+.post-container
+  .post
+    .article-heading
+      .post-date= post.date.display
+      .post-heading
+        if showPageLink
+          a(href=post.metadata.link).heart-link
+            include ../../public/images/heart.svg
+        != post.header
+    .post-body!= post.body
