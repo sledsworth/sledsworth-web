@@ -183,9 +183,9 @@ h4 {
 } */
 
 .main-container {
-  max-width: 680px;
-  margin: auto;
-  padding: 0 4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 /* CODE STYLES */
@@ -289,7 +289,10 @@ sup a {
 }
 
 header {
-  margin-top: 4rem;
+  background: var(--background);
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
 }
 
 header a {
@@ -299,13 +302,10 @@ header a {
   border: none;
 }
 
-header img {
-  width: 6rem;
-}
-
-.content-container {
-  margin-top: 4rem;
-  min-height: 460px;
+main {
+  flex-shrink: 0;
+  flex-grow: 2;
+  flex-basis: auto;
 }
 
 hr {
@@ -397,7 +397,8 @@ footer span {
   }
 
   .main-container {
-    padding: 0 1rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   blockquote {

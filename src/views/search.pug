@@ -1,14 +1,14 @@
 extends ./layout.pug
 
 block title
-  title search | empatheticbot
+  title search &ndash; sledsworth
 block content
   .content-container
     h1 Search
     form(action="/search")
       span.search-icon
         include ../public/images/search.svg
-      input(name="search", placeholder="Search Empatheticbot" type="text", value=lastSearch, id="search")
+      input(name="search", placeholder="Search sledsworth.com" type="text", value=lastSearch, id="search")
     if posts && posts.length > 0 
       each post in posts
         include ./includes/post

@@ -1,13 +1,13 @@
 extends ./layout.pug
 
 block title
-  title #{post.textTitle} | empatheticbot
+  title #{post.textTitle} &ndash; sledsworth
 
 block richPreviews
   meta(property='og:title', content=post.metadata.title)
-  meta(property='og:url', content=`https://empatheticbot.com/${post.metadata.link}`)
-  meta(property='og:image', content=`http://empatheticbot.com/images/${post.metadata.image}`)
-  meta(property='og:image:secure_url', content=`https://empatheticbot.com/images/${post.metadata.image}`)
+  meta(property='og:url', content=`https://sledsworth.com/${post.metadata.link}`)
+  meta(property='og:image', content=`http://sledsworth.com/images/${post.metadata.image}`)
+  meta(property='og:image:secure_url', content=`https://sledsworth.com/images/${post.metadata.image}`)
   meta(property='og:image:type', content='image/png')
   meta(property='og:image:width', content='1200')
   meta(property='og:image:height', content='1200')

@@ -1,10 +1,18 @@
-- var pages = ['about', 'projects', 'archive' ]
-
 header
-    a(href="/")
-        include ../../public/images/logo.svg
-    nav
-        ul
-            each path in pages
-                li
-                    a(href="/" + path, class=path === route && 'active') #{path}
+  .headshot
+    img(class="about" src="https://f001.backblazeb2.com/file/empatheticbot/about.jpg" alt="Handsome portrait of Steve" title="Handsome portrait of Steve")
+  h1 Steve Ledsworth
+  section
+    p.
+     I’m a software—mostly web—developer and designer out of Lansing, Michigan.  
+     I’m lucky to have married my patient, beautiful wife, Samantha.
+
+    p.
+      While I have a Computer Science degree, I tend to find it more of a means to an
+      end—design is where products really come alive. Good design is difficult to explain
+      and can be expressed across a spectrum—from surprise and delight to fading into the
+      background, going unnoticed. So much software is limited by the absence of design—meeting
+      some written requirement without thought of how it will be used by humans—that is why I started
+      #[a(href="https://empatheticbot.com") Empatheticbot]. Empathizing with the user is the only way
+      we can create honest, delightful software.
+
