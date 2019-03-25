@@ -12,19 +12,16 @@ html(lang='en')
     link(rel='apple-touch-icon' sizes='192x192', href='/images/icon.png')
     link(rel='stylesheet', href='/stylesheets/atom-light.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(href='https://fonts.googleapis.com/css?family=Anonymous+Pro|Merriweather+Sans:800|Merriweather:400,400i,700' rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Anonymous+Pro|Merriweather+Sans:400,400i,700,800|Merriweather:400,400i,700' rel='stylesheet')
     block title
       title sledsworth
 
   body
     .main-container
       include ./includes/header.pug
-      main
-        block content
-        .floating-buttons
-          button.scroll-to-top
-        if route !== 'search' 
-          include ./includes/search-bar.pug
+      .main-content
+        main
+          block content
         include ./includes/footer.pug
 
 

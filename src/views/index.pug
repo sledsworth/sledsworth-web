@@ -3,9 +3,51 @@ extends ./layout
 block title
   title home &ndash; sledsworth
 block content
-  .content-container
-    if pageHeading
-      h1 #{pageHeading}
-    if posts 
-      each post in posts
-        include ./includes/post
+    h3.margin-top-0 Work
+    ul.label-list
+      li.margin-top-2
+        label 2019
+        p Started #[a(href="https://empatheticbot.com") Empatheticbot]
+      //- li
+      //-   label.margin-top-1 2018
+      //-   p Started #[a(href="/blog") writing]
+      li.margin-top-2
+        label 2017
+        p Created firework launching software for Skyglow Controls
+      li.margin-top-2
+        label 2015
+        p Developer and designer at Auto-Owners Insurance
+      li.margin-top-2
+        label 2014
+        p Developed visual algorithm app at Central Michigan University 
+    h3 Writing
+    p Writing puts me out of my comfort zone—but I feel it is an important form of expression and one of the best tools in solidifying thoughts. One day I might actually be good at it.
+    - var lastDateLabel = ''
+    ul.label-list
+      if posts
+        - for (var i = 0; i < 6; i++)
+          - var post = posts[i]
+          if lastLabel !== post.date.short
+            li.margin-top-2
+              label= post.date.short
+              p #[a(href=post.metadata.link)= post.metadata.title]
+          else
+            li.margin-top-1
+              p #[a(href=post.metadata.link)= post.metadata.title]
+          - lastLabel = post.date.short
+    h3 Illustrations
+    a.image-link(href="https://f001.backblazeb2.com/file/empatheticbot/2017+Santa.png")
+      img(class="thumbnail" src="https://f001.backblazeb2.com/file/empatheticbot/2017+Santa.png" alt="Jolly Santa with his Sack of Toys." title="Jolly Santa")
+    a.image-link(href="https://f001.backblazeb2.com/file/empatheticbot/2016+Christmas.png")
+      img(class="thumbnail" src="https://f001.backblazeb2.com/file/empatheticbot/2016+Christmas.png" alt="Child building a snowman under the sparkling stars." title="Snowman")
+    h3 Currently...
+    ul.label-list
+      li.margin-top-2
+        label Reading
+        p #[a(href="https://en.wikipedia.org/wiki/A_Random_Walk_Down_Wall_Street") A Random Walk Down Wallstreet]
+      li.margin-top-2
+        label Playing
+        p #[a(href="https://www.destinythegame.com") Destiny 2] (still)
+      li.margin-top-2
+        label Watching
+        p #[a(href="https://www.imdb.com/title/tt2467372/") Brooklyn Nine-Nine]
