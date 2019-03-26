@@ -2,6 +2,22 @@ extends ./layout
 
 block title
   title home &ndash; sledsworth
+block header
+  header
+    img(class="thumbnail" src="https://f001.backblazeb2.com/file/empatheticbot/about.jpg" alt="Handsome portrait of Steve" title="Handsome portrait of Steve")
+    h1 Steve Ledsworth
+    h2 Previously...
+    .archive
+      if archives
+        each months, year in archives
+          .year-row
+            h2
+              a(href=`/${year}`) #{year}
+            each days, month in months
+              .month-column
+                a(href=`/${year}/${month}`) #{toMonth[Number(month)]}
+    include ./includes/contact.pug
+
 block content
   .content-container
     if pageHeading

@@ -18,7 +18,8 @@ html(lang='en')
 
   body
     .main-container
-      include ./includes/header.pug
+      block header
+        include ./includes/header.pug
       .main-content
         main
           block content

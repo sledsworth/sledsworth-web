@@ -85,6 +85,14 @@ h4 {
   font-size: 1.1em;
 }
 
+.post {
+  font-size: .9em;
+}
+
+.post-heading h1 {
+  margin-bottom: 0;
+}
+
 /* MAIN LAYOUT CLASSES */
 
 .main-container {
@@ -154,13 +162,14 @@ header {
   flex-grow: 1;
   flex-shrink: 3;
   flex-basis: 320px;
-  padding: 5em 2rem 5em 4rem;
+  padding: 5em 3em 5em;
   text-align: left;
   background-color: var(--header-bg);
   color: var(--text-header);
   box-shadow: 0 0 4rem var(--text-secondary);
   margin: 2em 1em;
   border-radius: 48px;
+  font-size: .9em;
 }
 
 .about-me {
@@ -262,11 +271,13 @@ footer {
 }
 
 .link-icon {
-  height: 1.5em;
+  /* margin-left: -3em;
+  margin-right: 0.8em; */
+  vertical-align: text-bottom;
   width: 1.5em;
-  margin-top: 1em;
-  margin-left: -2em;
-  margin-right: 0.5em;
+  height: 1.5em;
+  margin-left: .5em;
+  padding: .1em;
 }
 
 .inline {
@@ -274,7 +285,7 @@ footer {
 }
 
 .post-heading h1 {
-  display: inline-block;
+  display: inline;
 }
 
 

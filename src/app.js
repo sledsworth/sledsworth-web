@@ -9,7 +9,9 @@ const express = require('express'),
 
 const GithubService = require('./GithubService.js')
 const PostManager = require('./PostManager.js')
-const { numberToMonth } = require('./DateUtility')
+const {
+  numberToMonth
+} = require('./DateUtility')
 const baseGithubUri = 'https://api.github.com'
 
 const Github = new GithubService({
@@ -18,7 +20,7 @@ const Github = new GithubService({
 })
 const app = express()
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header(
     'Access-Control-Allow-Headers',
@@ -27,7 +29,9 @@ app.use(function(req, res, next) {
   next()
 })
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 app.use(
   bodyParser.text({
     type: 'text/html',
@@ -43,7 +47,7 @@ app.use(cookieParser())
 /**
  * Routes
  */
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.render('index', {
     posts: PostManager.getFrontPage(),
     year: new Date().getFullYear(),
@@ -52,11 +56,20 @@ app.get('/', function(req, res) {
   })
 })
 
-app.get('/*.html', function(req, res) {
+app.get('/*.html', function (req, res) {
   res.sendFile(__dirname + '/views/google2887d1f7bafc06b0.html')
 })
 
-app.get('/search', function(req, res) {
+app.get('/blog', function (req, res) {
+  res.render('home', {
+    posts: PostManager.getFrontPage(),
+    year: new Date().getFullYear(),
+    route: '',
+    showPageLink: true,
+  })
+})
+
+app.get('/search', function (req, res) {
   const search = req.query.search
   let foundPosts = []
   if (search) {
@@ -71,7 +84,7 @@ app.get('/search', function(req, res) {
   })
 })
 
-app.get('/:year/', function(req, res, next) {
+app.get('/:year', function (req, res, next) {
   const currentYear = new Date().getFullYear()
   const year = parseInt(req.params.year)
   const isYear = _.isInteger(year) && year <= currentYear
@@ -79,16 +92,30 @@ app.get('/:year/', function(req, res, next) {
     const foundPosts = PostManager.getPostsByYear(year)
 
     if (foundPosts.length > 0) {
-      res.render('index', {
+      res.render('home', {
         pageHeading: `Posts from ${year}:`,
         posts: foundPosts,
         year: currentYear,
         route: '',
+        archives: PostManager.cachedPosts,
+        toMonth: {
+          1: 'January',
+          2: 'February',
+          3: 'March',
+          4: 'April',
+          5: 'May',
+          6: 'June',
+          7: 'July',
+          8: 'August',
+          9: 'September',
+          10: 'October',
+          11: 'November',
+          12: 'December',
+        },
       })
     } else {
       res.render('error', {
-        description:
-          "I tried my best to find this post... I really did! Unfortunantly, it doesn't seem to exist ¯\\_(ツ)_/¯",
+        description: "I tried my best to find this post... I really did! Unfortunantly, it doesn't seem to exist ¯\\_(ツ)_/¯",
         title: 'This is not the page you are looking for...',
         year: new Date().getFullYear(),
       })
@@ -98,7 +125,7 @@ app.get('/:year/', function(req, res, next) {
   }
 })
 
-app.get('/:year/:month', function(req, res, next) {
+app.get('/:year/:month', function (req, res, next) {
   const currentYear = new Date().getFullYear()
   const currentMonth = new Date().getMonth() + 1
   const year = parseInt(req.params.year)
@@ -109,16 +136,30 @@ app.get('/:year/:month', function(req, res, next) {
   if (isYear && isMonth) {
     const foundPosts = PostManager.getPostsByMonth(year, month)
     if (foundPosts.length > 0) {
-      res.render('index', {
+      res.render('home', {
         pageHeading: `Posts from ${numberToMonth(month)}, ${year}:`,
         posts: foundPosts,
         year: currentYear,
         route: '',
+        archives: PostManager.cachedPosts,
+        toMonth: {
+          1: 'January',
+          2: 'February',
+          3: 'March',
+          4: 'April',
+          5: 'May',
+          6: 'June',
+          7: 'July',
+          8: 'August',
+          9: 'September',
+          10: 'October',
+          11: 'November',
+          12: 'December',
+        },
       })
     } else {
       res.render('error', {
-        description:
-          "I tried my best to find this post... I really did! Unfortunantly, it doesn't seem to exist ¯\\_(ツ)_/¯",
+        description: "I tried my best to find this post... I really did! Unfortunantly, it doesn't seem to exist ¯\\_(ツ)_/¯",
         title: 'This is not the page you are looking for...',
         year: new Date().getFullYear(),
       })
@@ -128,7 +169,7 @@ app.get('/:year/:month', function(req, res, next) {
   }
 })
 
-app.get('/:year/:month/:day/:postTitle', function(req, res) {
+app.get('/:year/:month/:day/:postTitle', function (req, res) {
   const post = PostManager.getPostAt(
     req.params.year,
     req.params.month,
@@ -142,18 +183,16 @@ app.get('/:year/:month/:day/:postTitle', function(req, res) {
     })
   } else {
     res.render('error', {
-      description:
-        "I tried my best to find this post... I really did! Unfortunantly, it doesn't seem to exist ¯\\_(ツ)_/¯",
+      description: "I tried my best to find this post... I really did! Unfortunantly, it doesn't seem to exist ¯\\_(ツ)_/¯",
       title: 'This is not the page you are looking for...',
       year: new Date().getFullYear(),
     })
   }
 })
 
-app.get('/archive', function(req, res) {
+app.get('/archive', function (req, res) {
   res.render(
-    'archive',
-    {
+    'archive', {
       year: new Date().getFullYear(),
       archives: PostManager.cachedPosts,
       route: 'archive',
@@ -188,13 +227,12 @@ app.get('/archive', function(req, res) {
   )
 })
 
-app.get('/:viewname', function(req, res) {
+app.get('/:viewname', function (req, res) {
   const view = PostManager.getPage(req.params.viewname)
   // console.log(view)
   if (view) {
     res.render(
-      'template',
-      {
+      'template', {
         year: new Date().getFullYear(),
         route: req.params.viewname,
         tabTitle: req.params.viewname,
@@ -220,7 +258,7 @@ app.get('/:viewname', function(req, res) {
   }
 })
 
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
   res.status = 404
   res.render('error', {
     title: 'Page Not Found',
@@ -229,7 +267,7 @@ app.get('*', function(req, res) {
   })
 })
 
-app.post('/payload', function(req, res) {
+app.post('/payload', function (req, res) {
   if (req.body.ref.includes(process.env.GITHUB_BRANCH)) {
     const commits = req.body.commits
     const modifiedFiles = commits.reduce((acc, commit) => {
@@ -296,9 +334,9 @@ function getInitialContent() {
 
 getInitialContent().then(
   () =>
-    app.listen(process.env.PORT || 5000, function() {
-      console.info('Started selBlogger, version ', version)
-      console.info('At: ', `localhost:${process.env.PORT}`)
-    }),
+  app.listen(process.env.PORT || 5000, function () {
+    console.info('Started selBlogger, version ', version)
+    console.info('At: ', `localhost:${process.env.PORT}`)
+  }),
   error => console.log(error)
 )

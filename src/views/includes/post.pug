@@ -2,9 +2,9 @@
   .post
     .article-heading
       .post-heading
-        //- if post.metadata.isLinkHeader
-        //-   .link-icon.inline
-        //-     include ../../public/images/link.svg
         != post.header
+        if post.metadata.isLinkHeader
+          .link-icon.inline
+            include ../../public/images/link.svg
       .post-date= post.date.display
     .post-body!= post.body
