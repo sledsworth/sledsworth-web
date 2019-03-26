@@ -1,7 +1,7 @@
 extends ./layout.pug
 
 block title
-  title #{post.textTitle} &ndash; sledsworth
+  title #{post.metadata.title} &ndash; sledsworth
 
 block richPreviews
   meta(property='og:title', content=post.metadata.title)
