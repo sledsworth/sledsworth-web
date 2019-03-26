@@ -158,6 +158,9 @@ header {
   text-align: left;
   background-color: var(--header-bg);
   color: var(--text-header);
+  box-shadow: 0 0 4rem var(--text-secondary);
+  margin: 2em 1em;
+  border-radius: 48px;
 }
 
 .about-me {
