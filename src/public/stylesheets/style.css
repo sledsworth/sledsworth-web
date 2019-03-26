@@ -115,7 +115,7 @@ ol li {
 }
 
 ol li:before {
-  content: '.' counter(li);
+  content: '.'counter(li);
   color: var(--primary);
   display: inline-block;
   margin-left: -3px;
@@ -251,8 +251,7 @@ footer {
   color: var(--text-secondary);
 }
 
-@media only screen and (max-width: 480px) {
-}
+@media only screen and (max-width: 480px) {}
 
 .post-date {
   font-size: 0.8em;
@@ -273,4 +272,42 @@ footer {
 
 .post-heading h1 {
   display: inline-block;
+}
+
+
+@media screen and (max-width: 420px) {
+  body {
+    font-size: 15px;
+  }
+
+  header {
+    padding: 4em 1.5rem;
+  }
+
+  header img.thumbnail {
+    display: block;
+    margin: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 1.5em 0 .5em;
+  }
+
+  .label-list label {
+    position: relative;
+  }
+
+  .label-list p {
+    display: block;
+    margin-left: 0;
+  }
+
+  .main-content {
+    padding: 3.5em 1.5rem 1em;
+  }
 }
