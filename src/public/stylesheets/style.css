@@ -7,6 +7,7 @@
   --header-bg: #0d1017;
   --text-header: #7981a7c0;
   --subtle: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.4);
 }
 
 /* DARK MODE STYLES */
@@ -16,8 +17,9 @@
     --text: rgba(255, 255, 255, 0.7);
     --text-secondary: rgba(255, 255, 255, 0.4);
     --main-bg: #181e29;
-    --header-bg: #2e2e2e;
+    --header-bg: #0d1017;
     --subtle: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -52,7 +54,7 @@ sup {
 
 img {
   width: 100%;
-  box-shadow: 0 0 4rem var(--text-secondary);
+  box-shadow: 0 0 4rem var(--shadow);
   border-radius: 1rem;
 }
 
@@ -65,7 +67,7 @@ h4,
 h5,
 h6 {
   font-family: 'Merriweather Sans', sans-serif;
-  margin: 2.5em 0 1em;
+  margin: 2em 0 1em;
   font-weight: 800;
 }
 
@@ -159,17 +161,26 @@ p {
 }
 
 header {
-  flex-grow: 1;
+  flex-grow: 2;
   flex-shrink: 3;
-  flex-basis: 320px;
-  padding: 5em 3em 5em;
+  flex-basis: 200px;
+  padding: 4em 2em 4em;
   text-align: left;
   background-color: var(--header-bg);
   color: var(--text-header);
-  box-shadow: 0 0 4rem var(--text-secondary);
+  box-shadow: 0 0 4rem var(--shadow);
   margin: 2em 1em;
   border-radius: 48px;
   font-size: .9em;
+}
+
+.avatar {
+  text-align: center;
+}
+
+.avatar img {
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .about-me {
@@ -180,7 +191,7 @@ header {
   border-radius: 50%;
   max-width: 8em;
   max-height: 8em;
-  box-shadow: 0 0 4rem var(--text-secondary);
+  box-shadow: 0 0 4rem var(--shadow);
   margin-right: 1em;
   object-fit: cover;
 }
@@ -210,7 +221,7 @@ header a {
 .main-content {
   flex-shrink: 3;
   flex-grow: 10;
-  flex-basis: 460px;
+  flex-basis: 400px;
   padding: 5em 4rem 0 4rem;
   min-height: 100vh;
 }
@@ -232,7 +243,7 @@ main {
   display: inline-block;
   margin-top: 0em;
   margin-bottom: 0em;
-  margin-left: 7em;
+  margin-left: 5.5em;
 }
 
 .margin-top-0 {
