@@ -1,7 +1,7 @@
 /* NO PREFERENCE & LIGHT MODE STYLES */
 :root {
   --primary: #4286f4;
-  --secondary: #134BA6;
+  --secondary: #134ba6;
   --text: rgba(0, 0, 0, 0.8);
   --text-secondary: rgba(0, 0, 0, 0.4);
   --main-bg: #fdfdfd;
@@ -91,7 +91,7 @@ h4 {
 }
 
 .post {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .post-heading h1 {
@@ -128,7 +128,7 @@ ol li {
 }
 
 ol li:before {
-  content: '.'counter(li);
+  content: '.' counter(li);
   color: var(--primary);
   display: inline-block;
   margin-left: -3px;
@@ -181,7 +181,7 @@ p {
   box-shadow: 0 0 4rem var(--shadow);
   margin: 2em 1em;
   border-radius: 48px;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .avatar.small {
@@ -290,7 +290,8 @@ footer {
   color: var(--text-secondary);
 }
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+}
 
 .post-date {
   font-size: 0.8em;
@@ -304,7 +305,7 @@ footer {
   vertical-align: sub;
   width: 1em;
   height: 1em;
-  margin-left: .75em;
+  margin-left: 0.75em;
   /* padding: .1em; */
 }
 
@@ -323,6 +324,9 @@ footer {
   align-items: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 article {
@@ -336,7 +340,7 @@ article .wide {
 }
 
 article h1 {
-  margin: .9rem 0 0 0;
+  margin: 0.9rem 0 0 0;
   font-size: 1.5rem;
 }
 
@@ -354,38 +358,38 @@ blockquote {
 }
 
 .narrow {
-  /* order: 0; */
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 2;
   flex-basis: auto;
-  max-width: 300px;
-  min-width: 200px;
-  margin: .5rem 1.5rem;
+  /* max-width: 320px; */
+  /* min-width: 200px; */
+  margin: 0.5rem 1.5rem;
+  width: 240px;
 }
 
 .wide {
-  /* order: 1; */
   flex-grow: 2;
-  flex-shrink: 2;
+  flex-shrink: 1;
   flex-basis: auto;
-  max-width: 800px;
-  min-width: 600px;
-  margin: .5rem 1.5rem;
+  /* max-width: 800px; */
+  /* min-width: 400px; */
+  margin: 0.5rem 1.5rem;
+  width: 540px;
 }
 
 .header-links {
-  margin-top: 6rem;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: right;
+  width: 200px;
 }
 
 .header-wrapper,
 .header-wrapper:hover {
   vertical-align: middle;
-  margin-top: 6rem;
   font-weight: inherit;
   box-shadow: none;
   color: var(--text);
+  width: 460px;
 }
 
 .header-title {
@@ -397,15 +401,34 @@ blockquote {
   color: var(--text-secondary);
   margin: 0;
   line-height: 1;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .middle {
   vertical-align: middle;
 }
 
-.left-2 {
+.heading {
   margin-left: 2rem;
+}
+
+.header {
+  margin-top: 6rem;
+}
+
+@media screen and (max-width: 780px) {
+  .header-wrapper,
+  .header-links {
+    margin: 1rem 0 2rem;
+    text-align: center;
+  }
+  .heading {
+    width: 100%;
+    margin: 1rem 1rem 0 0;
+  }
+  .header-wrapper {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -421,6 +444,34 @@ blockquote {
     display: block;
     margin: auto;
   }
+  .header,
+  .narrow,
+  .wide {
+    text-align: center;
+  }
+
+  .heading {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  article .wide {
+    margin: 0;
+    text-align: left;
+  }
+
+  article .wide {
+    border-radius: 0;
+  }
+
+  /* .header-wrapper {
+    width: 460px;
+  } */
+
+  .heading {
+    margin: 1rem 0 0 0;
+    text-align: center;
+  }
 
   h1,
   h2,
@@ -428,7 +479,7 @@ blockquote {
   h4,
   h5,
   h6 {
-    margin: 1.5em 0 .5em;
+    margin: 1.5em 0 0.5em;
   }
 
   .label-list label {
