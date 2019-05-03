@@ -82,6 +82,10 @@ h2 {
   font-size: 1.7em;
 }
 
+article h2:first-child {
+  margin-top: 0.5rem;
+}
+
 h3 {
   font-size: 1.4em;
 }
