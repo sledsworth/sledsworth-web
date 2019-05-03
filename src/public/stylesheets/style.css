@@ -140,9 +140,26 @@ ol li:before {
   position: relative;
   max-width: 0;
   max-height: 0;
-  left: -1em;
-  top: 0;
+  left: -0.25rem;
+  top: 0.5rem;
   color: var(--primary);
+}
+
+article ul li {
+  list-style-type: none;
+}
+
+article ul li:before {
+  content: '\2022';
+  display: block;
+  position: relative;
+  max-width: 0;
+  max-height: 0;
+  left: -0.25rem;
+  top: 0.5rem;
+  color: var(--primary);
+  font-size: 2rem;
+  line-height: 2rem;
 }
 
 a:not(.header-wrapper) {
