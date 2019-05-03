@@ -1,21 +1,9 @@
-header
-  div.avatar
-    img(class="thumbnail" src="https://f001.backblazeb2.com/file/empatheticbot/about.jpg" alt="Handsome portrait of Steve" title="Handsome portrait of Steve")
-  h1 Steve Ledsworth
-  section.about-me
-    p.
-      Hi there! I’m a software&ndash;mostly web&ndash;developer and designer for an insurance company out of Lansing, Michigan. 
-    p.
-      I love my strong, beautiful, and patient wife, Samantha&ndash;along with Cugino’s pizza and awful pop music.
-    p.
-      I tend to pursue far too many personal projects&ndash;and ship nothing&ndash;as I am interested in software of all kinds. 
-      Currently, I am working on a #[a(href="https://empatheticbot.com/#boost") game] for my company 
-      #[a(href="https://empatheticbot.com") Empatheticbot], firework launching software for 
-      #[a(href="https://skyglow.tech") Skyglow], and a simple Slack Voting App.
-    p.
-      I try to #[a(href="/blog") write here]&ndash;admittedly, I do not spend as much time on this as I would like.
-    p.
-      Find out #[a(href="/about") more about me].
-    p.
-      This site is #[a(href="https://github.com/sledsworth/sledsworth-web") open-source] if you are interested in seeing the code.
-  include ./contact.pug
+header.flex.header
+  a(href="/").wide.header-wrapper
+    div.avatar.small.middle.inline
+      img(class="thumbnail" src="https://f001.backblazeb2.com/file/empatheticbot/about.jpg" alt="Handsome portrait of Steve" title="Handsome portrait of Steve")
+    div.inline.middle.heading
+      h1.header-title Steve Ledsworth
+      p.header-subtitle A pretty nice website.
+  .narrow.header-links
+    include ./contact.pug
