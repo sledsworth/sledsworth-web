@@ -5,6 +5,8 @@ article.flex
       .link-icon.inline
         include ../../public/images/link.svg
       p.post-date.inline Linked on&nbsp;
+    else 
+      p.post-date.inline Posted on&nbsp;
     p.post-date.inline= post.date.display
   .wide
     != post.body

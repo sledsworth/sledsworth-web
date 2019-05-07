@@ -261,10 +261,6 @@ p {
   min-height: 100vh;
 }
 
-main {
-  /* max-width: 700px; */
-}
-
 .max-main-width {
   max-width: 700px;
 }
@@ -316,6 +312,7 @@ footer {
   font-size: 0.8em;
   color: var(--text-secondary);
   margin: 0;
+  font-style: italic;
 }
 
 .link-icon {
