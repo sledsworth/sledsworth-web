@@ -1,9 +1,10 @@
 article.flex
   .narrow
     != post.header
+    if post.metadata.isLinkHeader
+      .link-icon.inline
+        include ../../public/images/link.svg
+      p.post-date.inline Linked on&nbsp;
     p.post-date.inline= post.date.display
-    //- if post.metadata.isLinkHeader
-    //-   .link-icon.inline
-    //-     include ../../public/images/link.svg
   .wide
     != post.body

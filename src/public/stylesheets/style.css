@@ -321,11 +321,15 @@ footer {
 .link-icon {
   /* margin-left: -3em;
   margin-right: 0.8em; */
-  vertical-align: sub;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.75em;
+  height: 2rem;
+
+  vertical-align: middle;
   /* padding: .1em; */
+}
+
+#link-icon {
+  width: 2rem;
+  height: 2rem;
 }
 
 .inline {
