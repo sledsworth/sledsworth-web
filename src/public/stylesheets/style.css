@@ -132,7 +132,7 @@ ol li {
 }
 
 ol li:before {
-  content: '.' counter(li);
+  content: '.'counter(li);
   color: var(--primary);
   display: inline-block;
   margin-left: -3px;
@@ -310,8 +310,7 @@ footer {
   color: var(--text-secondary);
 }
 
-@media only screen and (max-width: 480px) {
-}
+@media only screen and (max-width: 480px) {}
 
 .post-date {
   font-size: 0.8em;
@@ -441,15 +440,22 @@ blockquote {
 }
 
 @media screen and (max-width: 780px) {
+
   .header-wrapper,
   .header-links {
     margin: 1rem 0 2rem;
     text-align: center;
   }
+
   .heading {
     width: 100%;
     margin: 1rem 1rem 0 0;
   }
+
+  .header {
+    text-align: center;
+  }
+
   .header-wrapper {
     width: 100%;
   }
@@ -468,6 +474,7 @@ blockquote {
     display: block;
     margin: auto;
   }
+
   .header,
   .narrow,
   .wide {
