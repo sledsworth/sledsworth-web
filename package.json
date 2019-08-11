@@ -1,7 +1,7 @@
 {
-  "name": "sledsworth",
+  "name": "sledsworth-web",
   "version": "2019.5.0",
-  "description": "Node and Pug lightweight blog with Dropbox",
+  "description": "Lightweight blogging app built with Nodejs & Pugjs that uses Github as a post repo.",
   "author": "Steve Ledsworth",
   "private": true,
   "main": "src/app.js",
@@ -11,7 +11,6 @@
     }
   },
   "scripts": {
-    "develop": "heroku local",
     "start": "heroku local"
   },
   "dependencies": {
@@ -29,7 +28,7 @@
     "pug": "^2.0.0-rc.2",
     "serve-favicon": "^2.4.3"
   },
-  "repository": {},
+  "repository": "https://github.com/sledsworth/sledsworth-web",
   "prettier": {
     "semi": false,
     "trailingComma": "es5",
